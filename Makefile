@@ -1,6 +1,6 @@
 default: html-docs
 
-html-docs: index.html
+html-docs: syllabus.html
 
 %.html: %.Rmd
 	Rscript --vanilla -e "rmarkdown::render(\"$*.Rmd\",output_format=\"html_document\")"
