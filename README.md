@@ -4,9 +4,8 @@ title: "STATS 810 (Fall 2026)"
 
 ###  Literature Proseminar, Including Discussions on Responsible Conduct in Research and Scholarship
  
-### Instructor: Edward Ionides 
-
-### [Syllabus](syllabus.html) 
+Instructor: Edward Ionides  
+[Syllabus](syllabus.html) 
 
 ### Homework assignment and class notes
 
