@@ -13,9 +13,9 @@ Instructor: Edward Ionides
 
 * [Homework 1. Building and maintaining healthy mentor/mentee relationships](hw01.pdf).
 
-<!--
 * [Homework 2. Publication and peer review](hw02.pdf).
 
+<!--
 * [Homework 3. Academic misconduct](hw03.pdf). 
 
 * [Homework 4. Data and the reproducibility of research results](hw04.pdf).
