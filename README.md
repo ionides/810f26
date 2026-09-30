@@ -17,8 +17,9 @@ Instructor: Edward Ionides
 
 * [Homework 3. Academic misconduct](hw03.pdf). 
 
-<!--
 * [Homework 4. Data and the reproducibility of research results](hw04.pdf).
+
+<!--
 
 * [Homework 5. Conflicts of interest and conflicts of commitment](hw05.pdf).
 
