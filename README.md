@@ -19,10 +19,9 @@ Instructor: Edward Ionides
 
 * [Homework 4. Data and the reproducibility of research results](hw04.pdf).
 
-<!--
-
 * [Homework 5. Conflicts of interest and conflicts of commitment](hw05.pdf).
 
+<!--
 * [Homework 6. Collaborative research & Human participants and animal subjects](hw06.pdf).
 
 * [Homework 7. Negligence, mistakes & how to avoid them](hw07.pdf).
