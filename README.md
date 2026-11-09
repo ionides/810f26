@@ -27,9 +27,9 @@ Instructor: Edward Ionides
 
 * Homework 8. Preparation for ERC workshop. See email from workshop organizers.
 
-<!--
-* [Homework 8. Linux, the command line, and the open source software movement](hw08.pdf). [Some advice](unix_advice). Sample [.bash_profile](https://github.com/ionides/ionides.github.io/blob/master/computing/mac/bash_profile) used for my Mac laptop.
+* [Homework 9. Linux and the command line](hw09.pdf). Sample [.bash_profile](https://github.com/ionides/ionides.github.io/blob/master/computing/mac/bash_profile) used for my Mac laptop.
 
+<!--
 * [Homework 9. Parallel statistical computing](hw09.pdf).
 
 * [Homework 10. Statistical computing on greatlakes](hw10.pdf).
