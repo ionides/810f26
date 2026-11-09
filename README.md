@@ -25,6 +25,8 @@ Instructor: Edward Ionides
 
 * [Homework 7. Negligence, mistakes & how to avoid them](hw07.pdf).
 
+* Homework 8. Preparation for ERC workshop. See email from workshop organizers.
+
 <!--
 * [Homework 8. Linux, the command line, and the open source software movement](hw08.pdf). [Some advice](unix_advice). Sample [.bash_profile](https://github.com/ionides/ionides.github.io/blob/master/computing/mac/bash_profile) used for my Mac laptop.
 
