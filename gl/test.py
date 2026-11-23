@@ -1,6 +1,7 @@
 import os
 import time
 import csv
+import warnings
 import numpy as np
 from joblib import Parallel, delayed
 
@@ -8,6 +9,11 @@ from joblib import Parallel, delayed
 # or how many cores the machine has, if we are on a single-user computer.
 cores = os.environ.get("SLURM_NTASKS_PER_NODE")
 cores = int(cores) if cores is not None else os.cpu_count()
+
+# Workers that return large arrays keep a high memory footprint after the
+# arrays are freed. joblib's loky backend mistakes this for a memory leak and
+# replaces the worker, which is harmless but prints a scary warning.
+warnings.filterwarnings("ignore", message="A worker stopped while some jobs")
 
 
 def rnorm(n):
@@ -26,19 +32,15 @@ def timer(f):
     return (t1.user - t0.user, t1.system - t0.system, e1 - e0)
 
 
-with Parallel(n_jobs=cores, max_nbytes=None, timeout=None, batch_size=20) as parallel:
+with Parallel(n_jobs=cores) as parallel:
     # start up the worker processes before timing anything
-    _ = parallel(delayed(rnorm)(1) for i in range(cores))
+    parallel(delayed(rnorm)(1) for i in range(cores))
 
     time0 = timer(lambda: rnorm(10**8))
     time1 = timer(lambda: parallel(delayed(rnorm)(10**7) for i in range(10)))
     time2 = timer(lambda: parallel(delayed(rnorm)(10**6) for i in range(10**2)))
     time3 = timer(lambda: parallel(delayed(rnorm)(10**5) for i in range(10**3)))
-#    time4 = timer(lambda: parallel(delayed(rnorm)(10**4) for i in range(10**4)))
-    
-
-# time3 = time2
-time4 = time2
+    time4 = timer(lambda: parallel(delayed(rnorm)(10**4) for i in range(10**4)))
 
 with open("test.csv", "w", newline="") as f:
     w = csv.writer(f)
