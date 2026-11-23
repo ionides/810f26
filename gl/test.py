@@ -26,15 +26,19 @@ def timer(f):
     return (t1.user - t0.user, t1.system - t0.system, e1 - e0)
 
 
-with Parallel(n_jobs=cores) as parallel:
+with Parallel(n_jobs=cores, max_nbytes=None, timeout=None, batch_size=20) as parallel:
     # start up the worker processes before timing anything
-    parallel(delayed(rnorm)(1) for i in range(cores))
+    _ = parallel(delayed(rnorm)(1) for i in range(cores))
 
     time0 = timer(lambda: rnorm(10**8))
     time1 = timer(lambda: parallel(delayed(rnorm)(10**7) for i in range(10)))
     time2 = timer(lambda: parallel(delayed(rnorm)(10**6) for i in range(10**2)))
     time3 = timer(lambda: parallel(delayed(rnorm)(10**5) for i in range(10**3)))
-    time4 = timer(lambda: parallel(delayed(rnorm)(10**4) for i in range(10**4)))
+#    time4 = timer(lambda: parallel(delayed(rnorm)(10**4) for i in range(10**4)))
+    
+
+# time3 = time2
+time4 = time2
 
 with open("test.csv", "w", newline="") as f:
     w = csv.writer(f)

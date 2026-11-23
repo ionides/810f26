@@ -180,7 +180,7 @@ Your home directory files (and therefore these packages) are accessible on all n
 
 ## A test of `joblib`
 
-- The `gl` subdirectory of the `810f26` git repo contains `test-py.sbat` that submits a batch job running the parallel `joblib` test in `test.py`.
+- The `gl` subdirectory of the `810f26` git repo contains `test.sbat` that submits a batch job running the parallel `joblib` test in `test.py`.
 
 - You can transfer the files from your laptop via `scp`, or by copy-paste.
   Or simply clone the class git repository into your greatlakes account,
@@ -189,17 +189,17 @@ Your home directory files (and therefore these packages) are accessible on all n
 git clone https://github.com/ionides/810f26.git
 ```
 
-- Inspect the text file `test-py.sbat`, for example by
+- Inspect the text file `test.sbat`, for example by
 
 ```bash
-more test-py.sbat
+more test.sbat
 ```
 
 - One thing that needs changing is to set your email address for alerts about jobs beginning and ending. To make these edits on greatlakes, you need a text editor. Options include
 
 ```bash
-vi test-py.sbat
-nano test-py.sbat
+vi test.sbat
+nano test.sbat
 ```
 
 <!--
@@ -211,7 +211,7 @@ nano test-py.sbat
 - You are now ready to run a batch job
 
 ```bash
-sbatch test-py.sbat
+sbatch test.sbat
 ```
 
 - From inspecting the code in `test.py`, we see that the results are saved in `test.csv`
@@ -221,7 +221,7 @@ sbatch test-py.sbat
 - Also, try running the code in `test2.py` by
 
 ```bash
-sbatch test2-py.sbat
+sbatch test2.sbat
 ```
 
   What do you learn from comparing the outputs in `test2.csv` with `test.csv` on greatlakes and your laptop?
