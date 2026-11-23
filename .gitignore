@@ -24,3 +24,8 @@ cache
 .DS_Store
 *.Rproj
 .Rproj.user
+
+# for vscode latex
+*.synctex.gz
+*.fdb_latexmk
+*.fls

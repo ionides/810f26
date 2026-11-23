@@ -1,0 +1,58 @@
+---
+title: Some slides on JAX
+author:
+  - STATS 810 \newline Ed Ionides
+date: 23 November 2026
+date-format: long
+format:
+  beamer:
+    cite-method: natbib
+    biblio-style: apalike
+    incremental: false
+    slide-level: 2
+    classoption: t
+    aspectratio: 169
+    header-includes:
+      - \usepackage{amssymb}
+      - \setbeamertemplate{footline}[page number]
+
+---
+
+## Users
+
+* "JAX is used by almost every large genAI player (Anthropic, Cohere, DeepMind, Midjourney, Character.ai, XAi, Apple, etc.). Its actual market share in foundation models development is something like 80%." (https://news.ycombinator.com/item?id=39876444)
+
+* Used for AlphaFold, Google Maps routing, etc.
+
+* Becoming dominant for scientific computing with GPUs
+
+## Approach
+
+* Leverages [XLA](https://en.wikipedia.org/wiki/Accelerated_Linear_Algebra)
+
+* Looks like NumPy, but replaces it with `jax.numpy`
+
+## Thinking like C
+
+* For just-in-time (jit) compilation, JAX needs to know the size of arrays. Any function called with a new array size will be recompiled.
+
+* Loops of variable length are problematic for automatic differentiation (AD). Reverse mode AD needs access to the full computation tree, and so jit wants this to have fixed dimension.
+
+## Thinking like JAX
+
+* Central ideas are the composable functions `jax.jit`, `jax.vmap`, `jax.grad`
+
+* `jax.jit`. Just-in-time compilation, building a computation tree.
+
+* `jax.vmap`. Announces a vectorized calculation. This does not specify how the calculation will be split up (**sharded**) across processors.
+
+* `jax.grad`. Uses reverse-mode automatic differentiation. Repeated to give the Hessian.
+
+## GPU considerations
+
+* 32 bit vs 64 bit numbers
+
+* To what extent does a GPU follow the single instruction multiple data (SIMD) paradigm?
+
+
+
