@@ -17,6 +17,7 @@
 /cache/figs/*.*
 /cache/inforeach/*
 /tmp/*.*
+tmp
 bak
 figure
 cache
