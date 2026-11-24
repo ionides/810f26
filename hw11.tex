@@ -9,9 +9,9 @@ Statistical computing on greatlakes
 
 \end{center}
 
-From Homework 9, we understand the relevance of being able to implement embarrassingly parallel calculations. This homework is a simple exercise that implements this on the greatlakes cluster. Last homework, we used \texttt{foreach} in R, but here we are going to do an equivalent experiment with Python, using \texttt{joblib}.
+From Homework 9, we understand the relevance of being able to implement embarrassingly parallel calculations. This homework is a simple exercise that implements this on the greatlakes cluster. Last homework, we used \texttt{foreach} in R, but here we are going to do an equivalent experiment with Python, using \texttt{joblib.Parallel}.
 
-This exercise involves a simple example, but once you can run a simple parallel for loop on greatlakes you are prepared for most simulation experiments that arise in statistics PhD research. Work through the questions below and write brief answers to the following questions, by editing the tex file available at \url{https://github.com/ionides/810f26}, and submit the resulting pdf file via Canvas.
+This exercise involves a simple example, but once you can run a simple parallel for loop on greatlakes you are prepared for many simulation experiments that arise in statistics PhD research. Work through the questions below and write brief answers to the following questions, by editing the tex file available at \url{https://github.com/ionides/810f26}, and submit the resulting pdf file via Canvas.
 
 \begin{enumerate}
 
@@ -21,22 +21,21 @@ This exercise involves a simple example, but once you can run a simple parallel 
 If run time starts limiting your research---i.e., whenever there is a numerical result you would like to see but you don't have the patience to wait for it to be computed---you have various options, including:
   \begin{enumerate}
   \item Use smaller examples.
+  \item Rewrite your code for efficiency, for example by vectorizing with NumPy.
   \item Write the critical part of your code in a compiled language such as C, C++ or Rust, and call it from Python\\
     (\url{https://docs.python.org/3/extending/extending.html}).
-    \\
-    Alternatively, tools such as Cython, pybind11 and numba facilitate combining Python with compiled code. JAX takes a related approach, using just-in-time compilation of numerical Python code.
-  \item Work on rewriting your code to make it more efficient, for example by vectorizing with NumPy.
+  \item Use just-in-time compilation, for example via Numba or JAX.
   \item Run your code on a more powerful machine, maybe moving from your laptop to greatlakes.
   \end{enumerate}
 Comment on situations when each approach might be suitable. Do you have advice, or relevant experiences?
 
 YOUR ANSWER HERE.
 
-\item Follow the instructions at \url{https://ionides.github.io/810f26/gl/slides.pdf} to run a job testing \texttt{joblib} on greatlakes. Please modify \texttt{test-py.sbat} and \texttt{test2-py.sbat} to use your own email address. Report back on any problems that arose.
+\item Follow the instructions at \url{https://ionides.github.io/810f26/gl/slides.pdf} to run a job testing \texttt{joblib} on greatlakes. Please modify \texttt{test.sbat} and \texttt{test2.sbat} to use your own email address. Report back on any problems that arose.
 
 YOUR ANSWER HERE.
 
-\item How do you explain the differences in results between running \texttt{test-py.sbat} and \texttt{test2-py.sbat}? You will need to inspect the code in \texttt{test.py} and \texttt{test2.py}. You may also find it helpful to compare with results from running these scripts on your laptop.
+\item How do you explain the differences in results between running \texttt{test.sbat} and \texttt{test2.sbat}? You will need to inspect the code in \texttt{test.py} and \texttt{test2.py}. You may also find it helpful to compare with results from running these scripts on your laptop.
 
 YOUR ANSWER HERE.
 
